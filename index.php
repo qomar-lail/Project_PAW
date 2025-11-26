@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="View/css/sidebar.css">
     <link rel="stylesheet" href="View/css/dasboard.css">
     <link rel="stylesheet" href="View/css/navigation.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="/View/css/main.css"> -->
 </head>
