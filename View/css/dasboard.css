@@ -1,0 +1,18 @@
+.conten .content .main-view h1{
+    font-size: 50px;
+}
+.conten .content .main-view{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url('../gambar/main-view.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.conten .content .main-view h1{
+    color:#e0f63b;
+    
+}
