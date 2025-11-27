@@ -4,7 +4,7 @@
         0 0 2px #fefefeff">Diary Of Learning</span> </h1>
         <p class="text-sm-center text-light text-start w-75 fs-5">Tingkatkan kemampuanmu setiap hari dengan catatan belajar, progress harian, dan materi yang kamu pelajari. Pantau perkembanganmu dan jadikan belajar sebagai kebiasaan terbaikmu.</p>
     </div>
-    <div class="m-3 p-5 mt-4 d-flex justify-content-center align-items-center flex-row shadow-sm" style="height:300px; width:1130px;">
+    <div class="m-3 p-5 mt-4 d-flex justify-content-center align-items-center flex-row shadow-lg rounded-lg" style="height:300px; width:1130px;">
         <div class="w-25 p-2">
             <canvas id="grafik"></canvas>
             <script>

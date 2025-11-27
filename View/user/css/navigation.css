@@ -1,8 +1,11 @@
+.navbar{
+    height: 60px;
+}
 .navbar .profil i{
     background-color: #5570FC !important;
     color: white;
-    width: 33px;
-    height: 33px;
+    width: 35px;
+    height: 35px;
     font-size: 18px;          
     display: flex;             /* PENTING */
     justify-content: center;   /* PENTING */
