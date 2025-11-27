@@ -12,7 +12,7 @@
         <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link d-flex align-items-center" href="View/dashboard.php"><i class="fa-solid fa-house pe-2"></i> Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-school pe-2"></i>Sekolah</a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-book pe-2"></i>Modul</a></li>
+            <li class="nav-item"><a class="nav-link" href="./modul.php"><i class="fa-solid fa-book pe-2"></i>Modul</a></li>
             <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-percent pe-2"></i>Progres</a></li>
             <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-book pe-2"></i>Modul</a></li>
         </ul>
