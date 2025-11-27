@@ -46,9 +46,9 @@
             unset($_SESSION["notif"]);
         ?>
     <?php endif; ?>
-    <?php require_once __DIR__. "/View/navigation.php"?>
+    <?php require_once __DIR__. "/View/user/navigation.php"?>
     <div class="conten">
-        <?php require_once __DIR__. "/View/dasboard.php" ?>
+        <?php require_once __DIR__. "/View/user/dasboard.php" ?>
     </div>
 
 </body>
