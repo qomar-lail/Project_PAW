@@ -1,3 +1,9 @@
+<?php
+$halaman = "Dasboard";
+$_SESSION["halaman"] = $halaman;
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,12 +26,6 @@
 </head>
 <body>
 
-    <?php if (isset($_SESSION["notif"])): ?>
-        <?php
-            require_once "include/notif/notif.php";
-            unset($_SESSION["notif"]);
-        ?>
-    <?php endif; ?>
     <?php require_once __DIR__. "/navigation.php"?>
     <div class="conten">
         <div class="content d-flex justify-content-center align-items-center flex-column">
@@ -70,7 +70,7 @@
     </div>
     <div class="view-card d-flex gap-5 justify-content-between flex-row m-3 p-5">
         <div class="card mb-3">
-            <img src="/Project_PAW/view/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
+            <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="card mb-3">
-            <img src="/Project_PAW/view/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
+            <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="card mb-3">
-            <img src="/Project_PAW/view/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
+            <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

@@ -1,5 +1,5 @@
 <!-- Button -->
-<i class="fa-solid fa-bars text-primary fa-lg ps-2" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></i>
+<i class="fa-solid fa-bars text-primary fa-lg ps-2 pe-2 mt-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></i>
 
 <!-- Sidebar -->
 <div class="offcanvas offcanvas-start" id="sidebar" style="width: 300px;">

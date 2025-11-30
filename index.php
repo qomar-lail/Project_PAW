@@ -29,7 +29,7 @@
     <?php endif; ?>
     <?php include "navigation.php"?>
     <div class="conten">
-        <?php require_once __DIR__. "/controler/index_controller.php" ?>
+        <?php require_once __DIR__. "/controler/user/index_controller_user.php" ?>
     </div>
 
 </body>

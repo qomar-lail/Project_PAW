@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__. "../../Model/koneksi.php";
+$conn = new mysqli("localhost","root","","diary_learning");
 
 session_start();
 if(isset($_POST["login"])){
