@@ -1,22 +1,3 @@
-<?php
-    // include_once "auth.php";
-    // require_once("koneksi.php");
-    // $active = "pelanggan";
-    
-//     $pelanggan = null;
-//     $pelanggan_sql = "SELECT * FROM pelanggan";
-
-//     if ($sql = mysqli_query($conn, $pelanggan_sql)) {
-//         $pelanggan = [];
-//         while ($row = mysqli_fetch_assoc($sql)) {
-//             $pelanggan[] = $row;
-//         } 
-
-//         if (count($pelanggan) == []) {
-//             $pelanggan = null;
-//         }
-//     }
-// ?>
 
 
 <!DOCTYPE html>

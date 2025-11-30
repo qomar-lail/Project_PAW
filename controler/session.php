@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__. "../../Model/koneksi.php";
 
+session_start();
 if(isset($_POST["login"])){
     $user_name = htmlspecialchars($_POST["username"]);
     $pw =($_POST["password"]);
@@ -9,13 +10,15 @@ if(isset($_POST["login"])){
     $find_data = $conn->query($ambil_data);
     while($row = $find_data->fetch_assoc()){
         if($row["kata_sandi_hash"] == $pw_MD5 && ($row["nama_pengguna"])==$user_name){
-            session_start();
             $_SESSION["nama_pengguna"] = $row["nama_pengguna"];
             $_SESSION["login"] = true;
             header("location:index.php");
+            exit;
         }
     }
     $error = "username atau passsword tidak valid";
 }
+
+$_SESSION["notif"] = "";
 
 ?>
