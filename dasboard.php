@@ -1,4 +1,34 @@
-<div class="content d-flex justify-content-center align-items-center flex-column">
+<?php
+$halaman = "Dasboard";
+$_SESSION["halaman"] = $halaman;
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily-Learning</title>
+    <script defer src="./package/jquery/jquery.js"></script>
+    <script defer src="./js/sidebar.js"></script>
+    <script defer src="./js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="View/user/css/sidebar.css">
+    <link rel="stylesheet" href="View/user/css/dasboard.css">
+    <link rel="stylesheet" href="View/user/css/navigation.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="/View/css/main.css"> -->
+</head>
+<body>
+
+    <?php require_once __DIR__. "/navigation.php"?>
+    <div class="conten">
+        <div class="content d-flex justify-content-center align-items-center flex-column">
     <div class="main-view d-flex justify-content-center flex-column align-items-center shadow-sm" style="height: 540px;">
         <h1 class="text-light">Selamat datang di Dashboard <span class="text-primary" style="text-shadow:
         0 0 2px #fefefeff">Diary Of Learning</span> </h1>
@@ -40,7 +70,7 @@
     </div>
     <div class="view-card d-flex gap-5 justify-content-between flex-row m-3 p-5">
         <div class="card mb-3">
-            <img src="/Project_PAW/view/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
+            <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -48,7 +78,7 @@
             </div>
         </div>
         <div class="card mb-3">
-            <img src="/Project_PAW/view/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
+            <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -56,7 +86,7 @@
             </div>
         </div>
         <div class="card mb-3">
-            <img src="/Project_PAW/view/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
+            <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top" alt="..." style="height: 200px;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -65,3 +95,9 @@
         </div>
     </div>
 </div>
+
+    </div>
+
+</body>
+
+</html>

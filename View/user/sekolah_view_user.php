@@ -1,11 +1,14 @@
-
+<?php
+session_start();
+$_SESSION["halaman"] = "Sekolah";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily-Learning</title>
+    <title>Document</title>
     <script defer src="./package/jquery/jquery.js"></script>
     <script defer src="./js/sidebar.js"></script>
     <script defer src="./js/main.js"></script>
@@ -16,11 +19,8 @@
     <link rel="stylesheet" href="View/user/css/dasboard.css">
     <link rel="stylesheet" href="View/user/css/navigation.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="/View/css/main.css"> -->
 </head>
 <body>
-
     <?php if (isset($_SESSION["notif"])): ?>
         <?php
             require_once "include/notif/notif.php";
@@ -28,10 +28,19 @@
         ?>
     <?php endif; ?>
     <?php include "navigation.php"?>
-    <div class="conten">
-        <?php require_once __DIR__. "/controler/user/index_controller_user.php" ?>
-    </div>
-
+    <table>
+        <tr>
+            <th>ID Sekolah</th>
+            <th>Nama Sekolah</th>
+            <th>ID Siswa</th>
+        </tr>
+        <?php foreach($ls_data as $row): ?>
+            <tr>
+                <td><?= $row["sekolah_id"] ?></td>
+                <td><?= $row["nama_sekolah"] ?></td>
+                <td><?= $row["id_pengguna"] ?></td>
+            </tr>
+        <?php endforeach ?>
+    </table>
 </body>
-
 </html>
