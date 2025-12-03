@@ -21,12 +21,6 @@ $_SESSION["halaman"] = "Sekolah";
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <?php if (isset($_SESSION["notif"])): ?>
-        <?php
-            require_once "include/notif/notif.php";
-            unset($_SESSION["notif"]);
-        ?>
-    <?php endif; ?>
     <?php include "navigation.php"?>
     <table>
         <tr>

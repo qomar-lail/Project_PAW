@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<!--  -->
 <nav class="navbar bg-light border-bottom px-2 shadow-sm">
     <div class="r-head d-flex">
         <?php require_once __DIR__. "/sidebar.php"?>

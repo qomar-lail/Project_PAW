@@ -1,4 +1,13 @@
 
+<?php 
+session_start();
+
+if(!isset($_SESSION["login"]) && $_SESSION["login"] === true){
+    header("location:form_login.php");
+    exit;
+}   
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +29,6 @@
     <link rel="stylesheet" href="/View/css/main.css"> -->
 </head>
 <body>
-
-    <?php if (isset($_SESSION["notif"])): ?>
-        <?php
-            require_once "include/notif/notif.php";
-            unset($_SESSION["notif"]);
-        ?>
-    <?php endif; ?>
     <?php include "navigation.php"?>
     <div class="conten">
         <?php require_once __DIR__. "/controler/user/index_controller_user.php" ?>

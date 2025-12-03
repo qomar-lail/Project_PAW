@@ -1,6 +1,6 @@
 <?php
-$halaman = "Dasboard";
-$_SESSION["halaman"] = $halaman;
+
+$_SESSION["halaman"] = "Dasboard";
 
 ?>
 
@@ -26,8 +26,8 @@ $_SESSION["halaman"] = $halaman;
 </head>
 <body>
 
-    <?php require_once __DIR__. "/navigation.php"?>
-    <div class="conten">
+<?php require_once __DIR__. "../../../navigation.php"?>
+<div class="conten">
         <div class="content d-flex justify-content-center align-items-center flex-column">
     <div class="main-view d-flex justify-content-center flex-column align-items-center shadow-sm" style="height: 540px;">
         <h1 class="text-light">Selamat datang di Dashboard <span class="text-primary" style="text-shadow:
@@ -96,7 +96,7 @@ $_SESSION["halaman"] = $halaman;
     </div>
 </div>
 
-    </div>
+</div>
 
 </body>
 
