@@ -13,7 +13,6 @@
             <li class="nav-item"><a class="nav-link" href="sekolah.php"><i class="fa-solid fa-school pe-2"></i>Sekolah</a></li>
             <li class="nav-item"><a class="nav-link" href=""><i class="fa-solid fa-book pe-2"></i>Modul</a></li>
             <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-percent pe-2"></i>Progres</a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-book pe-2"></i>Modul</a></li>
             <li class="nav-item"><a class="nav-link" href="pengguna.php"><i class="fa-solid fa-book pe-2"></i>Pengguna</a></li>
         </ul>
     </div>

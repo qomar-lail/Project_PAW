@@ -1,8 +1,8 @@
 <!--  -->
-<nav class="navbar bg-light border-bottom px-2 shadow-sm">
+<nav class="navbar bg-light position-fixed border-bottom px-2 shadow-sm w-100">
     <div class="r-head d-flex">
         <?php require_once __DIR__. "/sidebar.php"?>
-        <h3 class="text-primary p-0"><?= $_SESSION["halaman"] ?></h3>
+        <h3 class="text-primary p-0"><?= $_SESSION["halaman"] ?? '' ?></h3>
     </div>
     <div class="profil d-flex flex-row justify-content-center align-items-center me-2">
         <p class="text-primary m-0 me-2">User</p>

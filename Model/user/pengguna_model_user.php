@@ -8,10 +8,17 @@ function ambil_data_pengguna() {
     $conn = get_connection();
     $result = mysqli_query($conn, "SELECT * FROM pengguna");
 
-    $rows = [];
+    $rows_1 = [];
     while($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
+        $rows_1[] = $row;
     }
 
-    return $rows;
+    $select = mysqli_query($conn,"SELECT * FROM pengguna LEFT JOIN sekolah ON pengguna.id_sekolah = sekolah.sekolah_id");
+
+    $rows_2 = [];
+    while($row = mysqli_fetch_assoc($select)){
+        $rows_2[] = $row;
+    }
+
+    return $rows_2;
 }

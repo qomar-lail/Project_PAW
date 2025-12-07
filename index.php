@@ -2,7 +2,7 @@
 <?php 
 session_start();
 
-if(!isset($_SESSION["login"]) && $_SESSION["login"] === true){
+if(!isset($_SESSION["login"])){
     header("location:form_login.php");
     exit;
 }   

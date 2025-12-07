@@ -1,6 +1,8 @@
 <?php
 
+
 $_SESSION["halaman"] = "Pengguna";
+$no = 1;
 ?>
 
 <!DOCTYPE html>
@@ -21,32 +23,46 @@ $_SESSION["halaman"] = "Pengguna";
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <?php if (isset($_SESSION["notif"])): ?>
-        <?php
-            require_once "include/notif/notif.php";
-            unset($_SESSION["notif"]);
-        ?>
-    <?php endif; ?>
-    <?php include "navigation.php"?>
-    <table>
-        <tr>
-            <th>ID Pengguna</th>
-            <th>Nama Pengguna</th>
-            <th>Email</th>
-            <th>Kata Sandi Hash</th>
-            <th>ID Sekolah</th>
-            <th>Tanggal Buat</th>
-        </tr>
-        <?php foreach($ls_data as $row): ?>
-            <tr>
-                <td><?= $row["pengguna_id"] ?></td>
-                <td><?= $row["nama_pengguna"] ?></td>
-                <td><?= $row["email"] ?></td>
-                <td><?= $row["kata_sandi_hash"] ?></td>
-                <td><?= $row["id_sekolah"] ?></td>
-                <td><?= $row["tanggal_buat"] ?></td>
-            </tr>
-        <?php endforeach ?>
-    </table>
+    <div>
+        <?php include "navigation.php"?>
+    </div>
+    <div class="conten px-3" style="padding-top:70px;">
+        <div class="">
+            <h3 class="text-primary">Daftar Pengguna</h3>
+            <p class="p-0">Temukan dan jelajahi profil pengguna lain di sini.</p>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="d-flex gap-1 align-items-center">
+                <h4 class="text-primary p-0">Semua Pengguna</h4>
+                <h5 class="text-secondary text-center p-0">2<?= count($ls_data)?? '' ?></h5>
+            </div>
+            <div class="tombol d-flex gap-2">
+                <h4 class="text-primary"><i class="fa-solid fa-magnifying-glass"></i></h4>
+                <form action="" class="d-flex gap-1">
+                    <input type="text" class="form-control" id="cari" placeholder="Cari Pengguna..." style="height: 30px;">
+                    <button class="btn btn-primary p-0 px-2" name="cari" style="height: 30px;">Temukan</button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <table class="table table-striped">
+                <tr>
+                    <th class="text-primary">No</th>
+                    <th class="text-primary">Nama</th>
+                    <th class="text-primary">Sekolah</th>
+                    <th class="text-primary">Tanggal Pembuatan</th>
+                </tr>
+                <?php foreach($ls_data as $pengguna): ?>
+                    <tr>
+                        <td class="text-primary"><?= $no ?></td>
+                        <td class="text-primary"><i class="fa-solid fa-circle-user "></i> <?= $pengguna["nama_pengguna"] ?? '' ?></td>
+                        <td class="text-primary"><?= $pengguna["nama_sekolah"] ?? 'Tidak Masuk Sekolah' ?></td>
+                        <td class="text-primary"><?= $pengguna["tanggal_buat"] ?? '' ?></td>
+                    </tr>
+                    <?php $no+=1 ?>
+                <?php endforeach?>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
