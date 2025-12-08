@@ -34,13 +34,13 @@ $no = 1;
         <div class="d-flex justify-content-between">
             <div class="d-flex gap-1 align-items-center">
                 <h4 class="text-primary p-0">Semua Pengguna</h4>
-                <h5 class="text-secondary text-center p-0">2<?= count($ls_data)?? '' ?></h5>
+                <h5 class="text-secondary text-center p-0"><?= count($ls_data)?? '' ?></h5>
             </div>
             <div class="tombol d-flex gap-2">
-                <h4 class="text-primary"><i class="fa-solid fa-magnifying-glass"></i></h4>
+                <h4 class="text-primary"></h4>
                 <form action="" class="d-flex gap-1">
                     <input type="text" class="form-control" id="cari" placeholder="Cari Pengguna..." style="height: 30px;">
-                    <button class="btn btn-primary p-0 px-2" name="cari" style="height: 30px;">Temukan</button>
+                    <button class="btn btn-primary p-0 px-2 d-flex align-items-center gap-1" name="cari" style="height: 30px;"><i class="fa-solid fa-magnifying-glass fa-xs"></i>Temukan</button>
                 </form>
             </div>
         </div>
@@ -54,10 +54,10 @@ $no = 1;
                 </tr>
                 <?php foreach($ls_data as $pengguna): ?>
                     <tr>
-                        <td class="text-primary"><?= $no ?></td>
-                        <td class="text-primary"><i class="fa-solid fa-circle-user "></i> <?= $pengguna["nama_pengguna"] ?? '' ?></td>
-                        <td class="text-primary"><?= $pengguna["nama_sekolah"] ?? 'Tidak Masuk Sekolah' ?></td>
-                        <td class="text-primary"><?= $pengguna["tanggal_buat"] ?? '' ?></td>
+                        <td><?= $no ?></td>
+                        <td><i class="fa-solid fa-circle-user text-primary "></i> <?= $pengguna["nama_pengguna"] ?? '' ?></td>
+                        <td><?= $pengguna["nama_sekolah"] ?? 'Tidak Masuk Sekolah' ?></td>
+                        <td><?= $pengguna["created_at"] ?? '' ?></td>
                     </tr>
                     <?php $no+=1 ?>
                 <?php endforeach?>
