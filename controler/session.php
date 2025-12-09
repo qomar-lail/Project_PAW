@@ -50,7 +50,7 @@ if ($res_user && $res_user->num_rows === 1) {
     }
 }
 
-    $error = "username atau password tidak valid";
+    $error = "Username atau Password tidak valid";
 }
 
 $_SESSION["notif"] = $_SESSION["notif"] ?? "";

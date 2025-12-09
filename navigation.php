@@ -1,4 +1,3 @@
-<!--  -->
 <nav class="navbar bg-light position-fixed border-bottom px-2 shadow-sm w-100">
     <div class="r-head d-flex">
         <?php require_once __DIR__. "/sidebar.php"?>

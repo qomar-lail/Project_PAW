@@ -53,12 +53,9 @@
             <label>Total Skor</label>
 
             <?php if ($action === 'create'): ?>
-              <!-- CREATE: tampil 0 dan TIDAK BISA DIKETIK -->
               <input type="number" value="0" disabled>
-              <!-- yang dikirim ke server -->
               <input type="hidden" name="total_skor" value="0">
             <?php else: ?>
-              <!-- EDIT: boleh diketik -->
               <input type="number" name="total_skor" value="<?= htmlspecialchars($edit_data['total_skor'] ?? 0) ?>">
             <?php endif; ?>
 

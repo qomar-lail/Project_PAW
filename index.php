@@ -25,8 +25,6 @@ if(!isset($_SESSION["login"])){
     <link rel="stylesheet" href="View/user/css/dasboard.css">
     <link rel="stylesheet" href="View/user/css/navigation.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="/View/css/main.css"> -->
 </head>
 <body>
     <?php include "navigation.php"?>

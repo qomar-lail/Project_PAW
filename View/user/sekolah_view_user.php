@@ -63,7 +63,7 @@ $no = 1;
                         <tr>
                             <td><?= $no ?></td>
                             <td><i class="fa-solid fa-circle-user text-primary "></i> <?= $dt_sekolah["nama_pengguna"] ?? '' ?></td>
-                            <td><?= $dt_sekolah["nama_sekolah"] ?? 'Tidak Masuk Sekolah' ?></td>
+                            <td><?= $dt_sekolah["nama_sekolah"] ?? 'Tidak Dalam Sekolah' ?></td>
                             <td><?= $dt_sekolah["judul"] ?? '' ?></td>
                         </tr>
                         <?php $no+=1 ?>

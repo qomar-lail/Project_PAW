@@ -56,7 +56,7 @@ $no = 1;
                     <tr>
                         <td><?= $no ?></td>
                         <td><i class="fa-solid fa-circle-user text-primary "></i> <?= $pengguna["nama_pengguna"] ?? '' ?></td>
-                        <td><?= $pengguna["nama_sekolah"] ?? 'Tidak Masuk Sekolah' ?></td>
+                        <td><?= $pengguna["nama_sekolah"] ?? 'Tidak Dalam Sekolah' ?></td>
                         <td><?= $pengguna["created_at"] ?? '' ?></td>
                     </tr>
                     <?php $no+=1 ?>
