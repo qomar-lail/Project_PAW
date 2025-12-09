@@ -25,8 +25,8 @@ $active = $active ?? 'dashboard';
 
   <div style="flex:1"></div>
 
-<a class="admin-side-item admin-logout" href="./controler/logout.php">
-  <i class="fa-solid fa-right-from-bracket"></i>
-  <span>Log Out</span>
-</a>
+  <a class="admin-side-item admin-logout" href="./controler/logout.php">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Log Out</span>
+  </a>
 </div>

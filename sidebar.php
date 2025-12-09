@@ -17,6 +17,6 @@
         </ul>
     </div>
     <div class="m-4">
-        <a class="btn btn-primary " href="./controler/logout.php"><i class="fa-solid fa-right-to-bracket pe-2"></i></i>Log Out</a>
+        <a class="btn btn-primary " href="controler/logout.php"><i class="fa-solid fa-right-to-bracket pe-2"></i></i>Log Out</a>
     </div>
 </div>
