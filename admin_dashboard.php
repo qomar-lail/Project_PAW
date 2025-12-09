@@ -8,7 +8,6 @@ $_SESSION["halaman"] = "Dashboard";
 $active    = 'dashboard';
 $pageTitle = "Dashboard";
 
-/* hitung jumlah modul (master_modul), sekolah, pengguna */
 $jumlah_modul   = 0;
 $jumlah_sekolah = 0;
 $jumlah_pengguna = 0;
