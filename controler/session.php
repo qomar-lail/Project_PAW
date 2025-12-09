@@ -11,9 +11,6 @@ if (isset($_POST["login"])) {
     $pw        = $_POST["password"] ?? "";
     $pw_MD5    = md5($pw);
 
-    // =========================
-    // 1) CEK ADMIN DULU
-    // =========================
     $u = $conn->real_escape_string($user_name);
     $sql_admin = "SELECT admin_id, username, password, nama_lengkap FROM admin WHERE username='$u' LIMIT 1";
     $res_admin = $conn->query($sql_admin);
@@ -28,7 +25,6 @@ if (isset($_POST["login"])) {
             $_SESSION["username"]     = $a["username"];
             $_SESSION["nama_lengkap"] = $a["nama_lengkap"];
 
-            // biar kompatibel sama code lama yang pake nama_pengguna
             $_SESSION["nama_pengguna"] = $a["nama_lengkap"];
 
             header("location: admin_dashboard.php");
@@ -36,25 +32,23 @@ if (isset($_POST["login"])) {
         }
     }
 
-    // =========================
-    // 2) CEK USER (PENGGUNA)
-    // =========================
-    $ambil_data = "SELECT password, nama_pengguna, pengguna_id FROM pengguna";
-    $find_data  = $conn->query($ambil_data);
+$sql_user = "SELECT pengguna_id, nama_pengguna, password
+             FROM pengguna
+             WHERE nama_pengguna='$u'
+             LIMIT 1";
+$res_user = $conn->query($sql_user);
 
-    if ($find_data) {
-        while ($row = $find_data->fetch_assoc()) {
-            if ($row["password"] === $pw_MD5 && $row["nama_pengguna"] === $user_name) {
-                $_SESSION["nama_pengguna"] = $row["nama_pengguna"];
-                $_SESSION["id"]            = (int)$row["pengguna_id"];
-                $_SESSION["login"]         = true;
-                $_SESSION["role"]          = "user";
-
-                header("location: index.php");
-                exit;
-            }
-        }
+if ($res_user && $res_user->num_rows === 1) {
+    $row = $res_user->fetch_assoc();
+    if ($row["password"] === $pw_MD5) {
+        $_SESSION["nama_pengguna"] = $row["nama_pengguna"];
+        $_SESSION["id"]            = (int)$row["pengguna_id"];
+        $_SESSION["login"]         = true;
+        $_SESSION["role"]          = "user";
+        header("location: index.php");
+        exit;
     }
+}
 
     $error = "username atau password tidak valid";
 }

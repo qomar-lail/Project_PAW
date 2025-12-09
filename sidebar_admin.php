@@ -1,5 +1,4 @@
 <?php
-// $active di-set di tiap halaman: 'dashboard' | 'modul' | 'sekolah' | 'pengguna'
 $active = $active ?? 'dashboard';
 ?>
 <div class="admin-sidebar">
