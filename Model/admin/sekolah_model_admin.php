@@ -4,7 +4,7 @@ function koneksi(){
     return new mysqli("localhost","root","","diary_learning_db");
 }
 
-function ambil_data_detail_sekolah($cari=" "){
+function ambil_data_detail_sekolah($cari=""){
     $conn = koneksi();
     $cari_data = trim($cari ?? '');
     $where = '';
@@ -12,9 +12,10 @@ function ambil_data_detail_sekolah($cari=" "){
         $esc = $conn->real_escape_string($cari_data);
         $where = "WHERE nama_sekolah LIKE '%$esc%'";
     }
-    $list = [];
+    $list_sekolah = [];
     $r = $conn->query("SELECT * FROM sekolah $where ORDER BY sekolah_id ASC");
-    if ($r) while($row = $r->fetch_assoc()) $list[] = $row;
+    if ($r) while($row = $r->fetch_assoc()) $list_sekolah[] = $row;
+    return $list_sekolah;
 }
 
 function ambil_data_sekolah(){

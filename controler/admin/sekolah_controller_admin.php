@@ -3,12 +3,13 @@ require_once __DIR__. "../../../Model/admin/sekolah_model_admin.php";
 
 function sekolah_index_admin(){
     $ls_data_sekolah = [];
-    if(isset($_GET["cari"]) && $_GET["cari"] !== " "){
-        echo "masuk sini";
+    if(isset($_GET["cari"]) && $_GET["cari"] !== ""){
+        $cari_data = $_GET["cari"];
         $ls_data_sekolah = ambil_data_detail_sekolah($_GET["cari"]);
     }else{
-        $ls_data_sekolah = ambil_data_sekolah();
+        $ls_data_sekolah = ambil_data_detail_sekolah();
     }
+    require_once __DIR__. "/crud/crud_sekolah_controller.php";
     include "../Project_PAW/View/admin/sekolah_view_admin.php";
 }
 
