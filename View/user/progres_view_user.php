@@ -38,7 +38,7 @@ $progres = $row["level_sekarang"];
             <div class="progress-bar" style="width: <?= $progres ?>%"></div>
         </div>
         <div class="">
-            
+            <p class="text-primary">Sejauh ini progres mu sudah <?= $progres ?>%</p>
         </div>
     </div>
 </body>

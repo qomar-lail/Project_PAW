@@ -1,4 +1,6 @@
 <?php
+
+$conn = new mysqli('localhost','root','','diary_learning_db');
 function ambil_semua_sekolah() {
     global $conn;
     $ls_data = [];

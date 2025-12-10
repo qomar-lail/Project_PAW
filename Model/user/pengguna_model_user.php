@@ -1,4 +1,7 @@
 <?php
+
+$conn = new mysqli('localhost','root','','diary_learning_db');
+
 function ambil_data_pengguna() {
     global $conn;
     $ls_data = [];
