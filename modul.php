@@ -1,4 +1,4 @@
 <?php
-include 'controler/modul_controler.php';
 
-sales_index();
+require_once "controler/user/modul_controler_user.php";
+modul_index();
