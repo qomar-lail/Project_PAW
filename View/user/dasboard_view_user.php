@@ -75,9 +75,7 @@ $_SESSION["halaman"] = "Dashboard";
                 <div class="w-75 d-flex flex-column justify-content-start p-4">
                     <h2 class="text-primary">Persentase Pengguna</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate excepturi
-                        quibusdam officiis, veritatis, libero laborum eligendi fuga modi ea optio facilis
-                        maxime porro ducimus fugit delectus. Nostrum provident blanditiis numquam.
+                        Grafik menunjukkan persentase pengguna yang terdaftar sebagai siswa dan pengguna yang tidak terhubung dengan sekolah.
                     </p>
                 </div>
             </div>
@@ -86,12 +84,11 @@ $_SESSION["halaman"] = "Dashboard";
 
     <script>
         const data = {
-            labels: ['Red', 'Blue', 'Yellow'],
+            labels: ['Bukan siswa', 'siswa'],
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: [<?= $data_bukan_siswa ?>, <?= $data_siswa ?>],
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',
                     'rgb(255, 205, 86)'
                 ]

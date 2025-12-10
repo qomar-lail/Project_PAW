@@ -32,7 +32,7 @@
                         <p class="text-center">Belum memiliki akun? <a href="form_daftar.php" class="">Daftar</a></p>
                     </div>
                     <div class="pb-2 d-flex flex-row justify-content-center">
-                        <span class='px-4 mb-2 text-danger text-align-right'><?= $error ??"" ?></span>
+                        <span class='px-4 mb-2 text-danger text-align-right'><?= $_SESSION["notif"] ??"" ?></span>
                 </div>
             </form>
         </div>
