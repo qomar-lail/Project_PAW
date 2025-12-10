@@ -1,27 +1,57 @@
 <?php
-
-function koneksi(){
-    return new mysqli("localhost","root","","diary_learning_db");
+function ambil_semua_sekolah() {
+    global $conn;
+    $ls_data = [];
+    $sql = "SELECT * FROM sekolah";
+    
+    if (isset($conn) && $conn) {
+        $result = mysqli_query($conn, $sql);
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $ls_data[] = $row;
+            }
+        }
+    }
+    return $ls_data;
 }
 
-function ambil_data_detail_sekolah($id){
-    $koneksi = koneksi();
-    $result = $koneksi->query("SELECT nama_sekolah,nama_pengguna,judul FROM sekolah JOIN pengguna ON sekolah.sekolah_id = pengguna.sekolah_id JOIN progress_belajar ON pengguna.pengguna_id = progress_belajar.pengguna_id JOIN master_modul ON progress_belajar.level_id = master_modul.level_id WHERE sekolah.sekolah_id = '$id'");
+function ambil_siswa_sekolah($id_sekolah = null) {
+    global $conn;
+    $ls_data_detail = [];
 
-    $ls_detail_sekolah = [];
-    while ($row = $result->fetch_assoc()){
-        $ls_detail_sekolah[] = $row;
+    $sql = "SELECT 
+                p.pengguna_id,
+                p.nama_pengguna, 
+                s.nama_sekolah,
+                (SELECT COALESCE(SUM(pb.skor), 0) 
+                 FROM progress_belajar pb 
+                 WHERE pb.pengguna_id = p.pengguna_id) as total_skor,
+                (SELECT m.judul FROM progress_belajar pb 
+                 JOIN master_modul m ON pb.level_id = m.level_id 
+                 WHERE pb.pengguna_id = p.pengguna_id 
+                 ORDER BY pb.level_id DESC LIMIT 1) as level_sekarang,
+                (SELECT pb.level_id FROM progress_belajar pb 
+                 WHERE pb.pengguna_id = p.pengguna_id 
+                 ORDER BY pb.level_id DESC LIMIT 1) as angka_level
+            FROM pengguna p
+            INNER JOIN sekolah s ON p.sekolah_id = s.sekolah_id";
+
+    if ($id_sekolah != null && isset($conn)) {
+        $safe_id = mysqli_real_escape_string($conn, $id_sekolah);
+        $sql .= " WHERE p.sekolah_id = '$safe_id' ";
     }
-    return $ls_detail_sekolah;
+
+    $sql .= " ORDER BY angka_level DESC, total_skor DESC";
+
+    if (isset($conn) && $conn) {
+        $result = mysqli_query($conn, $sql);
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $ls_data_detail[] = $row;
+            }
+        }
+    }
+    
+    return $ls_data_detail;
 }
-
-function ambil_data_sekolah(){
-    $koneksi = koneksi();
-    $result = $koneksi->query('SELECT * FROM sekolah');
-
-    $ls_sekolah = [];
-    while ($row = $result->fetch_assoc()){
-        $ls_sekolah[] = $row;
-    }
-    return $ls_sekolah;
-}?>
+?>

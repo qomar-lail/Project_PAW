@@ -1,6 +1,6 @@
 <i class="fa-solid fa-bars text-primary fa-lg ps-2 pe-2 mt-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></i>
 
-<div class="offcanvas offcanvas-start" id="sidebar" style="width: 300px;">
+<div class="offcanvas offcanvas-start position-fixed vh-100" id="sidebar" style="width: 300px;">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-primary">Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>

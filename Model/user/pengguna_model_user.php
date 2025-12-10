@@ -1,24 +1,35 @@
 <?php
-
-function get_connection() {
-    return mysqli_connect("localhost", "root", "", "diary_learning_db");
-}
-
 function ambil_data_pengguna() {
-    $conn = get_connection();
-    $result = mysqli_query($conn, "SELECT * FROM pengguna");
+    global $conn;
+    $ls_data = [];
 
-    $rows_1 = [];
-    while($row = mysqli_fetch_assoc($result)) {
-        $rows_1[] = $row;
+    $sql = "SELECT 
+                p.pengguna_id, 
+                p.nama_pengguna, 
+                s.nama_sekolah,
+                (SELECT COALESCE(SUM(pb.skor), 0) 
+                 FROM progress_belajar pb 
+                 WHERE pb.pengguna_id = p.pengguna_id) as total_skor,
+                (SELECT m.judul FROM progress_belajar pb 
+                 JOIN master_modul m ON pb.level_id = m.level_id 
+                 WHERE pb.pengguna_id = p.pengguna_id 
+                 ORDER BY pb.level_id DESC LIMIT 1) as level_sekarang,
+                (SELECT pb.level_id FROM progress_belajar pb 
+                 WHERE pb.pengguna_id = p.pengguna_id 
+                 ORDER BY pb.level_id DESC LIMIT 1) as angka_level
+            FROM pengguna p
+            LEFT JOIN sekolah s ON p.sekolah_id = s.sekolah_id
+            ORDER BY angka_level DESC, total_skor DESC";
+
+    if (isset($conn)) {
+        $result = mysqli_query($conn, $sql);
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $ls_data[] = $row;
+            }
+        }
     }
-
-    $select = mysqli_query($conn,"SELECT * FROM pengguna LEFT JOIN sekolah ON pengguna.sekolah_id = sekolah.sekolah_id");
-
-    $rows_2 = [];
-    while($row = mysqli_fetch_assoc($select)){
-        $rows_2[] = $row;
-    }
-
-    return $rows_2;
+    
+    return $ls_data;
 }
+?>
