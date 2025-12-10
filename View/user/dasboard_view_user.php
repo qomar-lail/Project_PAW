@@ -1,5 +1,5 @@
 <?php
-$_SESSION["halaman"] = "Dasboard";
+$_SESSION["halaman"] = "Dashboard";
 ?>
 
 <!DOCTYPE html>
@@ -9,34 +9,27 @@ $_SESSION["halaman"] = "Dasboard";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily-Learning</title>
 
-    <!-- JQuery -->
     <script defer src="./package/jquery/jquery.js"></script>
 
-    <!-- JS -->
     <script defer src="./js/sidebar.js"></script>
     <script defer src="./js/main.js"></script>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
           crossorigin="anonymous">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="View/user/css/sidebar.css">
     <link rel="stylesheet" href="View/user/css/dasboard.css">
     <link rel="stylesheet" href="View/user/css/navigation.css">
 
-    <!-- ChartJS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -47,7 +40,6 @@ $_SESSION["halaman"] = "Dasboard";
     <div class="conten">
         <div class="content d-flex justify-content-center align-items-center flex-column">
 
-            <!-- Hero Section -->
             <div class="main-view d-flex flex-column justify-content-center align-items-center shadow-sm"
                  style="height: 540px;">
 
@@ -65,7 +57,6 @@ $_SESSION["halaman"] = "Dasboard";
                 </p>
             </div>
 
-            <!-- Grafik Section -->
             <div class="m-3 p-5 mt-4 d-flex justify-content-center align-items-center flex-row shadow-lg rounded-lg"
                  style="height:300px; width:1130px;">
 
@@ -83,7 +74,6 @@ $_SESSION["halaman"] = "Dasboard";
                 </div>
             </div>
 
-            <!-- Cards Section -->
             <div class="view-card d-flex gap-5 justify-content-between flex-row m-3 p-5">
                 <?php for ($i = 0; $i < 3; $i++): ?>
                     <div class="card mb-3 z-0">
@@ -107,7 +97,6 @@ $_SESSION["halaman"] = "Dasboard";
         </div>
     </div>
 
-    <!-- Chart Script -->
     <script>
         const data = {
             labels: ['Red', 'Blue', 'Yellow'],

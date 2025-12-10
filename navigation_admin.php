@@ -1,5 +1,4 @@
 <?php
-// $pageTitle di-set di tiap halaman (Dashboard / Modul / Sekolah / Pengguna)
 $pageTitle = $pageTitle ?? ($_SESSION["halaman"] ?? "Dashboard");
 ?>
 <div class="admin-topbar">

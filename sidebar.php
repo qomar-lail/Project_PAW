@@ -1,7 +1,5 @@
-<!-- Button -->
 <i class="fa-solid fa-bars text-primary fa-lg ps-2 pe-2 mt-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></i>
 
-<!-- Sidebar -->
 <div class="offcanvas offcanvas-start" id="sidebar" style="width: 300px;">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-primary">Menu</h5>
@@ -17,6 +15,6 @@
         </ul>
     </div>
     <div class="m-4">
-        <a class="btn btn-primary " href="./controler/logout.php"><i class="fa-solid fa-right-to-bracket pe-2"></i></i>Log Out</a>
+        <a class="btn btn-primary " href="controler/logout.php"><i class="fa-solid fa-right-to-bracket pe-2"></i></i>Log Out</a>
     </div>
 </div>
