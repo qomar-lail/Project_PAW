@@ -1,5 +1,6 @@
-<?php
-
+<?php 
+require_once __DIR__. "/controler/session_daftar.php";
+$id = 1;
 ?>
 
 
@@ -17,19 +18,31 @@
             <div class="mt-5 bg-white shadow rounded-3" style="width: 360px;">
                 
                 <div class="p-4 d-flex justify-content-center text-primary">
-                    <h1>Login</h1>
+                    <h2>DAFTAR AKUN</h2>
                 </div>
                 <form method="POST">
                     <div class="px-3 py-2">
                         <input type="text" class="form-control" id="inputPassword2" name="username" value="<?= $user_name ??"" ?>" placeholder="Username">
                     </div>
                     <div class="px-3 py-2">
+                        <input type="mail" class="form-control" id="inputPassword2" name="email" value="<?= $user_name ??"" ?>" placeholder="Email">
+                    </div>
+                    <div class="px-3 py-2">
                         <input type="password" class="form-control" id="inputPassword2" name="password" value="<?= $pw ?? '' ?>" placeholder="Password">
                     </div>
+                    <div class="px-3 py-2">
+                        <select class="form-control" name="id_sekolah" id="">
+                            <option value="" selected>--Pilih sekolah--</option>
+                            <?php foreach($sekolah as $nama): ?>
+                                <option value="<?= $id ?>"><?= $nama["nama_sekolah"] ?></option>
+                                <?php $id++ ?>
+                                <?php endforeach ?>
+                            <option value="NULL">Tidak sekolah</option>
+                        </select>
+                    </div>
                     <div class="px-3 py-2 d-flex flex-column justify-content-center">
-                        <?php require_once __DIR__. "/controler/session.php" ?>
-                        <button type="submit" class="btn btn-primary mb-3 w-100" name="login">Login</button>
-                        <p class="text-center">Belum memiliki akun? <a href="form_daftar.php" class="">Daftar</a></p>
+                        <button type="submit" class="btn btn-primary mb-3 w-100" name="daftar">Daftar</button>
+                        <p class="text-center">Sudah memiliki akun? <a href="form_login.php" class="">Login</a></p>
                     </div>
                     <div class="pb-2 d-flex flex-row justify-content-center">
                         <span class='px-4 mb-2 text-danger text-align-right'><?= $error ??"" ?></span>

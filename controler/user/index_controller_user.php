@@ -1,5 +1,14 @@
 <?php
+session_start();
+require_once __DIR__ . "../../../Model/user/dashboard_model_user.php";
+function dasboard_user(){
 
-include "../Project_PAW/View/user/dasboard_view_user.php";
+    if(!isset($_SESSION["login"])){
+        header("location:form_login.php");
+        exit;
+    }   
+    require_once __DIR__ . "../../../View/user/dasboard_view_user.php";
+}
+
 
 ?>

@@ -36,7 +36,15 @@ $_SESSION["halaman"] = "Dashboard";
 <body>
 
     <?php require_once __DIR__ . "../../../navigation.php" ?>
-
+    <?php if($_SESSION["tanggal_akses"] != date("Y-m-d")): ?>
+        <div class="position-absolute ms-5">
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <i class="fa-solid fa-bell me-2"></i>
+                Kamu telat belajar hari ini. Ayo kejar progresmu!
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    <?php endif ?>
     <div class="conten">
         <div class="content d-flex justify-content-center align-items-center flex-column">
 
@@ -73,27 +81,6 @@ $_SESSION["halaman"] = "Dashboard";
                     </p>
                 </div>
             </div>
-
-            <div class="view-card d-flex gap-5 justify-content-between flex-row m-3 p-5">
-                <?php for ($i = 0; $i < 3; $i++): ?>
-                    <div class="card mb-3 z-0">
-                        <img src="/Project_PAW/view/user/gambar/buku.jpg" class="card-img-top"
-                             alt="Gambar Buku" style="height: 200px;">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.
-                            </p>
-                            <p class="card-text">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </p>
-                        </div>
-                    </div>
-                <?php endfor; ?>
-            </div>
-
         </div>
     </div>
 
